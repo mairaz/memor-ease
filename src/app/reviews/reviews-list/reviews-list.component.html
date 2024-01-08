@@ -1,0 +1,46 @@
+<div class="new-review">
+  <app-new-review (emitReview)="createReview($event)"></app-new-review>
+</div>
+<section class="reviews">
+  <div class="reviews-wrap">
+    <h2>24 horas</h2>
+    <div class="review-item">
+      <ng-container *ngIf="reviews1$ | async as reviews">
+        <ng-container *ngFor="let review of reviews">
+          <ng-container *ngIf="review.next_review === date">
+            <app-review [review]="review" (concluirReview)="concluirReview(review, 7)">
+            </app-review>
+          </ng-container>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+
+  <div class="reviews-wrap">
+    <h2>7 dias</h2>
+    <div class="review-item">
+      <ng-container *ngIf="reviews7$ | async as reviews">
+        <ng-container *ngFor="let review of reviews">
+          <ng-container *ngIf="review.next_review === '11/01/2024'">
+            <app-review [review]="review">
+            </app-review>
+          </ng-container>
+        </ng-container>
+      </ng-container>
+    </div>
+
+  </div>
+  <div class="reviews-wrap">
+    <h2>30 dias</h2>
+    <div class="review-item">
+      <ng-container *ngIf="reviews30$ | async as reviews">
+        <ng-container *ngFor="let review of reviews">
+          <ng-container *ngIf="review.next_review === date">
+            <app-review [review]="review">
+            </app-review>
+          </ng-container>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</section>

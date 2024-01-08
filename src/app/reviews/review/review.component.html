@@ -1,0 +1,16 @@
+<mat-card>
+  <div class="header-wrapper">
+     <p class="review-title">{{review.title}}</p>
+    <div class="header-wrapper-created">
+      <p>Created at:</p>
+      <p> {{review.created_at  | date:'dd/MM/yyyy'}}</p>
+    </div>
+
+  </div>
+
+  <mat-card-subtitle>Livro 'English Advanced' pg 200-210</mat-card-subtitle>
+  <mat-card-actions align="end">
+    <mat-icon color="primary" (click)="concluirReview.emit()">check</mat-icon>
+    <mat-icon (click)="reviewService.deleteReview(review.id)" role="delete" >close</mat-icon>
+  </mat-card-actions>
+</mat-card>

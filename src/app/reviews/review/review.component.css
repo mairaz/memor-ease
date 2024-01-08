@@ -1,0 +1,32 @@
+.mat-card{
+  width:20rem;
+  min-width:12.5rem;
+}
+
+.mat-card-header{
+  justify-content: space-between;
+}
+
+.header-wrapper{
+  display: flex;
+  justify-content: space-between;
+}
+
+.review-title{
+  font-size:1.5rem;
+
+}
+
+.header-wrapper-created{
+  display: flex;
+  flex-direction: column;
+
+  p{
+    margin: 0px;
+  }
+}
+
+mat-card-actions{
+  cursor: pointer;
+  gap: 1.5rem
+}

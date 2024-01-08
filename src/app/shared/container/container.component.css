@@ -1,0 +1,17 @@
+.avatar{
+  width:2.5rem;
+  border-radius: 50%
+}
+.space{
+  margin-left: auto
+}
+.sidenav-container {
+  height: 100%;
+}
+
+.logo{
+  font-family: 'Expletus Sans', sans-serif;
+  color:#a65648;
+  font-size: 1.5rem;
+  margin:0px;
+}

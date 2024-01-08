@@ -1,0 +1,84 @@
+
+// THIS --> https://material.io/design/color/#tools-for-picking-colors
+// https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=fa8242
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+@import url("https://use.typekit.net/jnq3uxd.css");
+@import url('https://fonts.googleapis.com/css2?family=Expletus+Sans&display=swap');
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+$custom-typography: mat-typography-config(
+    $font-family: 'sofia-pro'
+);
+
+
+@include mat-core($custom-typography);
+
+/* For use in src/lib/core/theming/_palette.scss */
+$md-woodpalette0: (
+    50 : #fbf6f1,
+    100 : #f5eadb,
+    200 : #efdcc3,
+    300 : #e8cdab,
+    400 : #e3c399,
+    500 : #deb887,
+    600 : #dab17f,
+    700 : #d5a874,
+    800 : #d1a06a,
+    900 : #c89157,
+    A100 : #ffffff,
+    A200 : #fffcfa,
+    A400 : #ffe3c7,
+    A700 : #ffd6ad,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$review-project-primary: mat-palette($md-woodpalette0);
+$review-project-accent: mat-palette($md-woodpalette0, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$review-project-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$review-project-theme: mat-light-theme($review-project-primary, $review-project-accent, $review-project-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($review-project-theme);
+
+/* You can add global styles to this file, and also import other style files */
+
+
+
+html, body { height: 100%; }
+body { margin: 0; font-family: sofia-pro, sans-serif; }
+a {
+    color: white;
+    text-decoration: none;
+}
